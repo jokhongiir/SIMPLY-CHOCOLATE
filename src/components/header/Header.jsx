@@ -9,11 +9,11 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false);
 
   const navLinks = [
-    "Home",
-    "How it’s made?",
-    "Our products",
-    "Top sellers",
-    "Chocolate is loved",
+    { title: "Home", link: "#home" },
+    { title: "How it’s made?", link: "#howitsmade" },
+    { title: "Our products", link: "#products" },
+    { title: "Top sellers", link: "#topsellers" },
+    { title: "Chocolate is loved", link: "#reviews" },
   ];
 
   return (
@@ -28,11 +28,11 @@ const Header = () => {
           {navLinks.map((item, index) => (
             <a
               key={index}
-              href="#"
+              href={item.link}
               style={{ "--i": index }}
               onClick={closeMenu}
             >
-              {item}
+              {item.title}
             </a>
           ))}
         </nav>

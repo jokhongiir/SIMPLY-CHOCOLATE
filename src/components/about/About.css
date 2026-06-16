@@ -1,0 +1,146 @@
+/* Siz yuborgan asosiy dizayn elementlaridan foydalanamiz */
+.about-section {
+  padding: 80px 0px;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  /* background: #ffffff; */
+}
+
+/* Video/Rasm qismi stili */
+.about-video-wrapper {
+  flex: 1;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 400px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-video-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play tugmasi markazda bo'lishi uchun */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.play-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.play-btn:hover {
+  background-color: #fd9222;
+  border-color: #fd9222;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* O'ng tomondagi matnli karta stili */
+.about-content {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* Retsept qadamlari ro'yxati */
+.recipe-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recipe-steps li {
+  position: relative;
+  padding-left: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Rasmda ko'rsatilgan nuqtalar (bullet) stili */
+.recipe-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #4c4c4c; /* To'q kulrang nuqta */
+  border-radius: 50%;
+}
+
+/* RESPONSIVE: Planshet va Mobil qurilmalar uchun */
+@media (max-width: 992px) {
+  .about-section {
+    padding: 80px 20px;
+  }
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-video-wrapper {
+    min-height: 350px;
+  }
+
+  .about-content {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-video-wrapper {
+    min-height: 250px;
+  }
+
+  .about-content h3 {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .recipe-steps li {
+    font-size: 14px;
+    text-align: left;
+  }
+}

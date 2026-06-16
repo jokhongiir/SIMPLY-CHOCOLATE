@@ -1,152 +1,202 @@
 .taste {
-  width: 100%;
   max-width: 1400px;
-  margin: 80px auto;
+  margin: 100px auto;
   padding: 0 0px;
-
   font-family: "Montserrat", sans-serif;
 }
 
 .taste-header {
+  max-width: 760px;
+  margin: 0 auto 70px;
   text-align: center;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto 60px;
 }
 
 .taste-header h2 {
-  font-size: clamp(22px, 3vw, 36px);
+  font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.2;
   color: #111;
-  letter-spacing: -1px;
 }
 
-.taste-header h2 span {
+.taste-header span {
   color: #fd9222;
 }
 
 .taste-header p {
   margin-top: 20px;
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(0, 0, 0, 0.65);
+  color: #666;
+  line-height: 1.8;
 }
+
+/* GRID */
 
 .taste-grid {
+  cursor: pointer;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
-.taste-card {
-  border-radius: 24px;
-  padding: 30px 20px;
+/* FLIP CARD */
 
+.flip-card {
+  height: 320px;
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 24px;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* FRONT */
+
+.flip-front {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  text-align: center;
-
-  transition: all 0.4s ease;
-
-  min-height: 300px;
+  padding: 25px;
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-.taste-card img {
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-
-  transition: 0.4s ease;
+.flip-front img {
+  width: 160px;
+  transition: 0.4s;
 }
 
-.taste-card h3 {
-  margin-top: 20px;
-  font-size: 20px;
+.flip-front h3 {
+  margin-top: 25px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
-.taste-card.orange {
-  background: #fd9222;
-  color: #fff;
-}
-
-.taste-card.orange:hover {
-  transform: translateY(-10px);
-}
-
-.taste-card.white {
-  background: #ffffff;
-  border: 2px solid #fd9222;
-}
-
-.taste-card.white h3 {
-  color: #111;
-}
-
-.taste-card.white:hover {
-  transform: translateY(-10px);
-}
-
-.taste-card.dark {
-  background: #1a1420;
-  color: #fff;
-}
-
-.taste-card.dark:hover {
-  transform: translateY(-10px);
-}
-
-.taste-card.outline {
-  background: #ffffff;
-  border: 2px solid #eee;
-}
-
-.taste-card.outline h3 {
-  color: #111;
-}
-
-.taste-card.outline:hover {
-  border-color: #fd9222;
-  transform: translateY(-10px);
-}
-
-.taste-card:hover img {
+.flip-card:hover .flip-front img {
   transform: scale(1.08);
 }
 
-@media (max-width: 992px) {
-  .taste {
-    padding: 0 20px;
-  }
+/* COLORS */
+
+.orange {
+  background: #fd9222;
+  color: white;
+}
+
+.white {
+  background: white;
+  color: #111;
+  border: 2px solid #fd9222;
+}
+
+.dark {
+  background: #1a1420;
+  color: white;
+}
+
+.outline {
+  background: white;
+  color: #111;
+  border: 2px solid #ececec;
+}
+
+/* BACK */
+
+.flip-back {
+  background: white;
+  padding: 24px;
+
+  transform: rotateY(180deg);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 2px solid #fd9222;
+}
+
+.flip-back h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.flip-back p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* TAGS */
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  padding: 8px 14px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.orange-tag {
+  background: #fd9222;
+  color: white;
+}
+
+.white-tag {
+  border: 1px solid #ddd;
+  background: white;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
   .taste-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* MOBILE */
+
 @media (max-width: 600px) {
-  .taste-card h3 {
-    text-align: left;
-  }
   .taste-grid {
     grid-template-columns: 1fr;
   }
 
-  .taste-card {
-    min-height: 240px;
+  .flip-card {
+    height: 300px;
+  }
+
+  .taste-header {
+    text-align: left;
   }
 
   .taste-header h2 {
-    text-align: left;
-  }
-
-  .taste-header p {
-    text-align: left;
+    font-size: 24px;
   }
 }
