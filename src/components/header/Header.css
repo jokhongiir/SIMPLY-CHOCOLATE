@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* BASE */
 .header {
   width: 100%;
   position: sticky;
@@ -20,11 +19,12 @@
   justify-content: space-between;
 }
 
-/* LOGO */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+
 }
 
 .logo h1 {
@@ -38,7 +38,6 @@
   width: 42px;
 }
 
-/* NAV DESKTOP */
 .nav {
   display: flex;
   gap: 40px;
@@ -68,15 +67,12 @@
   width: 100%;
 }
 
-/* SOCIAL */
 .social {
   display: flex;
   gap: 25px;
 }
 
 .social svg {
-  /* width: 20px;
-  height: 20px; */
   cursor: pointer;
   transition: 0.3s;
 }
@@ -85,7 +81,6 @@
   transform: scale(1.1);
 }
 
-/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -102,7 +97,6 @@
   transition: 0.3s;
 }
 
-/* ANIMATION -> X */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -115,7 +109,6 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* MOBILE MENU (JALUZI STYLE) */
 @media (max-width: 992px) {
 
   .social {
@@ -156,8 +149,6 @@
     text-align: center;
     padding: 18px 0;
     border-bottom: 1px solid rgba(0,0,0,0.05);
-
-    /* JALUZI ANIMATION */
     opacity: 0;
     transform: translateY(-20px);
     animation: drop 0.4s ease forwards;
