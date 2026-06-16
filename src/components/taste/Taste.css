@@ -1,0 +1,183 @@
+/* ========================= */
+/* TASTE SECTION */
+/* ========================= */
+
+.taste {
+  width: 100%;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 0px;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.taste-header {
+  text-align: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.taste-header h2 {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #111;
+  letter-spacing: -1px;
+}
+
+.taste-header h2 span {
+  color: #fd9222;
+}
+
+.taste-header p {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.taste-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ========================= */
+/* CARD BASE */
+/* ========================= */
+
+.taste-card {
+  border-radius: 24px;
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  transition: all 0.4s ease;
+
+  min-height: 300px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.taste-card img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+
+  transition: 0.4s ease;
+}
+
+.taste-card h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ========================= */
+/* CARD TYPES (like design) */
+/* ========================= */
+
+/* ORANGE */
+.taste-card.orange {
+  background: #fd9222;
+  color: #fff;
+}
+
+.taste-card.orange:hover {
+  transform: translateY(-10px);
+}
+
+/* WHITE */
+.taste-card.white {
+  background: #ffffff;
+  border: 2px solid #fd9222;
+}
+
+.taste-card.white h3 {
+  color: #111;
+}
+
+.taste-card.white:hover {
+  transform: translateY(-10px);
+}
+
+/* DARK */
+.taste-card.dark {
+  background: #1a1420;
+  color: #fff;
+}
+
+.taste-card.dark:hover {
+  transform: translateY(-10px);
+}
+
+/* OUTLINE */
+.taste-card.outline {
+  background: #ffffff;
+  border: 2px solid #eee;
+}
+
+.taste-card.outline h3 {
+  color: #111;
+}
+
+.taste-card.outline:hover {
+  border-color: #fd9222;
+  transform: translateY(-10px);
+}
+
+/* hover image effect */
+.taste-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+/* tablet */
+@media (max-width: 992px) {
+  .taste {
+    padding: 0 20px;
+  }
+  .taste-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .taste-card h3 {
+    text-align: left;
+  }
+  .taste-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taste-card {
+    min-height: 240px;
+  }
+
+  .taste-header h2{
+    text-align: left;
+  }
+
+  .taste-header p {
+    text-align: left;
+  }
+}
