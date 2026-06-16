@@ -70,13 +70,11 @@ const Taste = () => {
         {data.map((item, index) => (
           <div className="flip-card" key={index}>
             <div className="flip-card-inner">
-              {/* Front */}
               <div className={`flip-front ${item.color}`}>
                 <img src={item.image} alt={item.title} />
                 <h3>{item.title}</h3>
               </div>
 
-              {/* Back */}
               <div className="flip-back">
                 <h3>{item.backTitle}</h3>
 

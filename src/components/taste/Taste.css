@@ -28,16 +28,12 @@
   line-height: 1.8;
 }
 
-/* GRID */
-
 .taste-grid {
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
-
-/* FLIP CARD */
 
 .flip-card {
   height: 320px;
@@ -68,8 +64,6 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* FRONT */
-
 .flip-front {
   display: flex;
   flex-direction: column;
@@ -96,8 +90,6 @@
   transform: scale(1.08);
 }
 
-/* COLORS */
-
 .orange {
   background: #fd9222;
   color: white;
@@ -119,8 +111,6 @@
   color: #111;
   border: 2px solid #ececec;
 }
-
-/* BACK */
 
 .flip-back {
   background: white;
@@ -147,8 +137,6 @@
   font-size: 14px;
 }
 
-/* TAGS */
-
 .tags {
   display: flex;
   gap: 10px;
@@ -173,15 +161,14 @@
   background: white;
 }
 
-/* TABLET */
-
 @media (max-width: 1100px) {
+  .taste {
+    padding: 0 20px;
+  }
   .taste-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* MOBILE */
 
 @media (max-width: 600px) {
   .taste-grid {
