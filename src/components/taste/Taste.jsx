@@ -8,10 +8,9 @@ import cofee from "../../assets/cofee.png";
 const Taste = () => {
   return (
     <section className="taste">
-      {/* HEADER */}
       <div className="taste-header">
         <h2>
-         IT ALL ADDS UP TO ONE EXCEPTIONAL <span>TASTE</span> SENSATION
+          IT ALL ADDS UP TO ONE EXCEPTIONAL <span>TASTE</span> SENSATION
         </h2>
 
         <p>
@@ -22,7 +21,6 @@ const Taste = () => {
         </p>
       </div>
 
-      {/* CARDS */}
       <div className="taste-grid">
         <div className="taste-card orange">
           <img src={chocolatee} alt="chocolate" />
