@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+:root {
+--header-height: 82px;
+--primary: #fd9222;
+--dark: #111111;
+--white: #ffffff;
+--transition: all 0.35s ease;
+}
+
+#home {
+width: 100%;
+background: #fafafa;
+padding: 0 20px 20px;
+font-family: "Montserrat", sans-serif;
+}
+
+.hero {
+width: 100%;
+max-width: 1400px;
+
+min-height: calc(100vh - var(--header-height) - 20px);
+
+margin: 0 auto;
+
+background-image: url("../../assets/backround-chocolate.png");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+
+border-radius: 32px;
+
+position: relative;
+overflow: hidden;
+
+display: flex;
+align-items: flex-end;
+
+box-shadow:
+0 20px 50px rgba(0, 0, 0, 0.08),
+0 40px 100px rgba(0, 0, 0, 0.08);
+}
+
+.hero::before {
+content: "";
+
+position: absolute;
+inset: 0;
+
+background:
+radial-gradient(
+circle at top right,
+rgba(253, 146, 34, 0.15),
+transparent 35%
+);
+
+z-index: 1;
+}
+
+.overlay {
+position: absolute;
+inset: 0;
+
+background: linear-gradient(
+90deg,
+rgba(17, 17, 17, 0.92) 0%,
+rgba(17, 17, 17, 0.68) 25%,
+rgba(17, 17, 17, 0.25) 55%,
+rgba(17, 17, 17, 0) 100%
+);
+
+z-index: 2;
+}
+
+.hero-content {
+position: relative;
+z-index: 5;
+
+max-width: 690px;
+
+margin-left: clamp(24px, 4vw, 40px);
+margin-bottom: clamp(24px, 4vw, 60px);
+}
+
+.hero-content h1 {
+color: var(--white);
+
+font-size: clamp(32px, 3vw, 54px);
+font-weight: 500;
+
+line-height: 1.2;
+letter-spacing: -1px;
+
+margin-bottom: 35px;
+
+text-wrap: balance;
+}
+
+.hero-buttons {
+display: flex;
+align-items: center;
+gap: 18px;
+}
+
+.buy-btn {
+width: 160px;
+height: 54px;
+
+border: none;
+border-radius: 999px;
+
+background: var(--primary);
+color: var(--white);
+
+font-size: 15px;
+font-weight: 700;
+
+cursor: pointer;
+
+transition: var(--transition);
+}
+
+.buy-btn:hover {
+transform: translateY(-4px);
+
+box-shadow:
+0 12px 25px rgba(253, 146, 34, 0.35);
+}
+
+.made-btn {
+width: 190px;
+height: 54px;
+
+border-radius: 999px;
+
+border: 1.5px solid rgba(255, 255, 255, 0.9);
+
+background: transparent;
+color: var(--white);
+
+font-size: 15px;
+font-weight: 700;
+
+cursor: pointer;
+
+transition: var(--transition);
+}
+
+.made-btn:hover {
+background: rgba(255, 255, 255, 0.95);
+color: var(--dark);
+}
+
+.scroll-down {
+position: absolute;
+
+right: 40px;
+bottom: 40px;
+
+z-index: 10;
+
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.scroll-down span {
+color: white;
+
+font-size: 15px;
+font-weight: 600;
+
+letter-spacing: 0.5px;
+}
+
+.circle {
+width: 46px;
+height: 46px;
+
+border-radius: 50%;
+
+background: white;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+cursor: pointer;
+
+transition: var(--transition);
+}
+
+.circle:hover {
+transform: translateY(-3px) rotate(180deg);
+}
+
+.circle span {
+color: var(--primary);
+font-size: 22px;
+font-weight: 800;
+}
+
+/* 1400px */
+
+@media (max-width: 1400px) {
+.hero-content {
+max-width: 560px;
+}
+}
+
+/* 992px */
+
+@media (max-width: 992px) {
+.hero {
+border-radius: 24px;
+}
+
+.hero-content h1 {
+font-size: 42px;
+}
+
+.scroll-down {
+right: 25px;
+bottom: 25px;
+}
+}
+
+/* 768px */
+
+@media (max-width: 768px) {
+#home {
+padding: 0 15px 15px;
+}
+
+.hero {
+border-radius: 20px;
+min-height: 650px;
+}
+
+.hero-content {
+margin-left: 24px;
+margin-right: 24px;
+margin-bottom: 24px;
+}
+
+.hero-content h1 {
+font-size: 28px;
+}
+
+.hero-buttons {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.buy-btn,
+.made-btn {
+width: 230px;
+}
+
+.scroll-down {
+display: none;
+}
+}
+
+/* 480px */
+
+@media (max-width: 480px) {
+.hero-content h1 {
+font-size: 24px;
+}
+
+.buy-btn,
+.made-btn {
+width: 100%;
+max-width: 240px;
+}
+}
