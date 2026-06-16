@@ -1,4 +1,3 @@
-/* Siz yuborgan asosiy dizayn elementlaridan foydalanamiz */
 .about-section {
   padding: 80px 0px;
 }
@@ -7,10 +6,8 @@
   display: flex;
   gap: 40px;
   align-items: stretch;
-  /* background: #ffffff; */
 }
 
-/* Video/Rasm qismi stili */
 .about-video-wrapper {
   flex: 1;
   position: relative;
@@ -27,7 +24,6 @@
   display: block;
 }
 
-/* Play tugmasi markazda bo'lishi uchun */
 .play-btn {
   position: absolute;
   top: 50%;
@@ -58,7 +54,6 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* O'ng tomondagi matnli karta stili */
 .about-content {
   flex: 1;
   background: #ffffff;
@@ -80,7 +75,6 @@
   max-width: 500px;
 }
 
-/* Retsept qadamlari ro'yxati */
 .recipe-steps {
   list-style: none;
   padding: 0;
@@ -98,7 +92,6 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-/* Rasmda ko'rsatilgan nuqtalar (bullet) stili */
 .recipe-steps li::before {
   content: "";
   position: absolute;
@@ -106,11 +99,10 @@
   top: 8px;
   width: 8px;
   height: 8px;
-  background-color: #4c4c4c; /* To'q kulrang nuqta */
+  background-color: #4c4c4c;
   border-radius: 50%;
 }
 
-/* RESPONSIVE: Planshet va Mobil qurilmalar uchun */
 @media (max-width: 992px) {
   .about-section {
     padding: 80px 20px;
