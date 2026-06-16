@@ -1,44 +1,181 @@
-.Header{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* BASE */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.logo img {
+  width: 42px;
+}
+
+/* NAV DESKTOP */
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #111;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  gap: 25px;
+}
+
+.social svg {
+  /* width: 20px;
+  height: 20px; */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social svg:hover {
+  transform: scale(1.1);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: #111;
+  transition: 0.3s;
+}
+
+/* ANIMATION -> X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE MENU (JALUZI STYLE) */
+@media (max-width: 992px) {
+
+  .social {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
-    padding: 12px 0px;
-    background-color: #FAFAFA;
-    border: 1px solid black;
-}
-.Header-Container{
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
+
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-}
-.Header-Logo{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-}
-.Header-Logo h1 {
-    color: #111111;
-    font-family: 'Montserrat', sans-serif;
-    font-style: oblique;
-    font-size: 20px;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 800px;
-}
-nav a{
-    text-decoration: none;
-    color: #111111;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-}
-.Header-Social-Media-Icons{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s ease;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav a {
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    /* JALUZI ANIMATION */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: drop 0.4s ease forwards;
+    animation-delay: calc(var(--i) * 0.08s);
+  }
+
+  .nav.open a {
+    animation: drop 0.4s ease forwards;
+  }
+
+  @keyframes drop {
+    from {
+      opacity: 0;
+      transform: translateY(-25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
