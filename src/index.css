@@ -6,23 +6,13 @@
   box-sizing: border-box;
 }
 
-/* ========================= */
-/* BODY BACKGROUND GRID */
-/* ========================= */
-
 body {
   font-family: "Montserrat", sans-serif;
-
   background-color: #f7f7f8;
-
-  /* GRID pattern */
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-
   background-size: 50px 50px;
-
   background-attachment: fixed;
-
   color: #111;
 }
