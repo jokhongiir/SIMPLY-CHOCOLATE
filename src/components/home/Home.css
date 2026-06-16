@@ -25,10 +25,10 @@
 
 #home {
   width: 100%;
-  background: var(--bg);
+  /* background: var(--bg); */
   font-family: "Montserrat", sans-serif;
 
-  padding: 40px 24px 60px;
+  padding: 13px 24px 60px;
 
   display: flex;
   flex-direction: column;
@@ -37,13 +37,13 @@
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .hero {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 
   min-height: 85vh;
@@ -147,7 +147,7 @@
 
 .advantages {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 
   background: linear-gradient(135deg, #0f0f10, #17121a);
