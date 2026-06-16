@@ -4,7 +4,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <section id="home">
-      {/* HERO */}
       <main className="hero">
         <div className="overlay" />
 
@@ -30,7 +29,6 @@ const Home = () => {
         </div>
       </main>
 
-      {/* ADVANTAGES */}
       <article className="advantages">
         <div className="container advantages-container">
           <div className="adv-card">

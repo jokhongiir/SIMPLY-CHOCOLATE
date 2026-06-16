@@ -19,20 +19,12 @@
   --transition: all 0.4s ease;
 }
 
-/* ========================= */
-/* BASE */
-/* ========================= */
-
 #home {
   width: 100%;
   background: var(--bg);
   font-family: "Montserrat", sans-serif;
   padding: 0 40px 40px;
 }
-
-/* ========================= */
-/* HERO */
-/* ========================= */
 
 .hero {
   width: 100%;
@@ -54,7 +46,6 @@
   box-shadow: var(--shadow-xl);
 }
 
-/* soft cinematic glow */
 .hero::before {
   content: "";
   position: absolute;
@@ -81,10 +72,6 @@
   );
 }
 
-/* ========================= */
-/* HERO CONTENT */
-/* ========================= */
-
 .hero-content {
   position: relative;
   z-index: 5;
@@ -105,17 +92,12 @@
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* ========================= */
-/* BUTTONS */
-/* ========================= */
-
 .hero-buttons {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-/* shared button style */
 .buy-btn,
 .made-btn {
   height: 52px;
@@ -137,7 +119,6 @@
   overflow: hidden;
 }
 
-/* BUY */
 .buy-btn {
   background: var(--primary);
   color: var(--white);
@@ -152,7 +133,6 @@
   box-shadow: 0 18px 40px rgba(253, 146, 34, 0.35);
 }
 
-/* MADE */
 .made-btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -165,10 +145,6 @@
   color: var(--dark);
   transform: translateY(-4px);
 }
-
-/* ========================= */
-/* SCROLL */
-/* ========================= */
 
 .scroll-down {
   position: absolute;
@@ -212,14 +188,6 @@
   font-size: 20px;
 }
 
-/* ========================= */
-/* ADVANTAGES */
-/* ========================= */
-
-/* ========================= */
-/* ADVANTAGES (PRO LEVEL) */
-/* ========================= */
-
 .advantages {
   width: 100%;
   max-width: 1400px;
@@ -235,7 +203,6 @@
   position: relative;
 }
 
-/* subtle glow */
 .advantages::before {
   content: "";
   position: absolute;
@@ -250,7 +217,6 @@
   opacity: 0.6;
 }
 
-/* container */
 .advantages-container {
   position: relative;
   z-index: 2;
@@ -263,7 +229,6 @@
   padding: 90px 70px;
 }
 
-/* CARD */
 .adv-card {
   position: relative;
 
@@ -285,7 +250,6 @@
   border-color: rgba(253, 146, 34, 0.3);
 }
 
-/* ICON */
 .adv-icon {
   width: 48px;
   height: 48px;
@@ -314,7 +278,6 @@
   transform: scale(1.05);
 }
 
-/* TITLE */
 .adv-card h3 {
   font-size: 18px;
   font-weight: 700;
@@ -323,17 +286,12 @@
   letter-spacing: -0.3px;
 }
 
-/* TEXT */
 .adv-card p {
   font-size: 14px;
   line-height: 1.7;
 
   color: rgba(255, 255, 255, 0.7);
 }
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
 
 @media (max-width: 992px) {
   .advantages-container {
