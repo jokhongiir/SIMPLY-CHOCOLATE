@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.css'
+import "./Header.css";
 import logo from "../../assets/chocolate.png";
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
       <header className="Header-Container">
         <div className="Header-Logo">
           <h1>SIMPLY CHOCOLATE</h1>
-          <img src={logo} alt="" />
+          <img width={50} src={logo} alt="" />
         </div>
         <nav>
           <a href="">Home</a>
@@ -17,11 +17,11 @@ const Header = () => {
           <a href="">Top sellers</a>
           <a href="">Chocolate is loved</a>
         </nav>
-        <div>
+        <div className="Header-Social-Media-Icons">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="26"
+            height="26"
             fill="currentColor"
             class="bi bi-instagram"
             viewBox="0 0 16 16"
@@ -30,8 +30,8 @@ const Header = () => {
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="28"
+            height="28"
             fill="currentColor"
             class="bi bi-twitter"
             viewBox="0 0 16 16"

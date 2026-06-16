@@ -4,3 +4,41 @@
     background-color: #FAFAFA;
     border: 1px solid black;
 }
+.Header-Container{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Header-Logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.Header-Logo h1 {
+    color: #111111;
+    font-family: 'Montserrat', sans-serif;
+    font-style: oblique;
+    font-size: 20px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+}
+nav a{
+    text-decoration: none;
+    color: #111111;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.Header-Social-Media-Icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
