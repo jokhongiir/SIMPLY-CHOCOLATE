@@ -39,8 +39,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-
+  gap: 0px;
   cursor: pointer;
 }
 
@@ -106,7 +105,7 @@
 .social {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 }
 
 .social svg {
