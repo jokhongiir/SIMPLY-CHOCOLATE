@@ -4,6 +4,7 @@ import "./index.css"
 import Home from './components/home/Home'
 import Taste from './components/taste/Taste'
 import About from './components/about/About'
+import Products from './components/products/Products'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Home/>
       <Taste/>
       <About/>
+      <Products/>
     </div>
   )
 }
