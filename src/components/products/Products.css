@@ -6,8 +6,8 @@
   max-width: 1400px;
   margin: 0 auto;
 }
-.swipper{
-    padding: 20px 0px;
+.swipper {
+  padding: 20px 0px;
 }
 .products-title {
   text-align: center;
@@ -21,7 +21,6 @@
   color: #fd9222;
 }
 
-
 .swiper-slide {
   display: flex;
 }
@@ -34,11 +33,13 @@
   padding: 30px;
   text-align: center;
 
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
-  transition: transform 0.15s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.4s ease;
 
   transform-style: preserve-3d;
 
@@ -60,7 +61,7 @@
   ); */
   opacity: 0;
   transition: 0.3s;
-  border: 2px solid  #fd9222;
+  border: 2px solid #fd9222;
 }
 
 .product-card:hover::before {
