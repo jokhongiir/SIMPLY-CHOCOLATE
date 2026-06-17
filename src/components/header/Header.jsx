@@ -12,7 +12,7 @@ const Header = () => {
     { title: "Home", link: "#home" },
     { title: "How it’s made?", link: "#howitsmade" },
     { title: "Our products", link: "#products" },
-    { title: "Top sellers", link: "#topsellers" },
+    { title: "Top sellers", link: "#sellers" },
     { title: "Chocolate is loved", link: "#reviews" },
   ];
 

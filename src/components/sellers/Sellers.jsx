@@ -7,7 +7,7 @@ import img3 from "../../assets/choco3.png";
 
 const Sellers = () => {
   return (
-    <section className="sellers">
+    <section id="sellers" className="sellers">
       <div className="sellers__container">
 
         {/* TITLE */}

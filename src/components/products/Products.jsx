@@ -93,7 +93,7 @@ export default function Products() {
   };
 
   return (
-    <section className="products-section">
+    <section id="products" className="products-section">
       <div className="products-wrapper">
         <h2 className="products-title">
           OUR <span>PRODUCTS</span>
