@@ -5,6 +5,7 @@ import Home from './components/home/Home'
 import Taste from './components/taste/Taste'
 import About from './components/about/About'
 import Products from './components/products/Products'
+import Sellers from './components/sellers/Sellers'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Taste/>
       <About/>
       <Products/>
+      <Sellers/>
     </div>
   )
 }
