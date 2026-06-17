@@ -8,17 +8,20 @@ const About = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlay = () => {
-    videoRef.current.play();
-    setIsPlaying(true);
-  };
+  const toggleVideo = () => {
+    if (!videoRef.current) return;
 
-  const handlePause = () => {
-    setIsPlaying(false);
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
   };
 
   return (
-    <section id="howitsmade" className="taste about-section">
+    <section id="howitsmade" className="about-section">
       <div className="taste-header">
         <h2>
           HOW IT'S <span>MADE?</span>
@@ -29,24 +32,28 @@ const About = () => {
         <div className="about-video-wrapper">
           <video
             ref={videoRef}
-            controls
             poster={posterVideo}
-            className="about-video-img"
+            className="about-video"
+            onClick={toggleVideo}
+            onEnded={() => setIsPlaying(false)}
           >
             <source src={aboutVideoPreview} type="video/mp4" />
           </video>
 
-          {!isPlaying && (
-            <button
-              className="play-btn"
-              onClick={handlePlay}
-              aria-label="Play video"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor">
+          <button
+            className={`video-control ${isPlaying ? "playing" : ""}`}
+            onClick={toggleVideo}
+          >
+            {isPlaying ? (
+              <svg viewBox="0 0 24 24">
+                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
-            </button>
-          )}
+            )}
+          </button>
         </div>
 
         <div className="about-content">
@@ -56,25 +63,24 @@ const About = () => {
 
           <ul className="recipe-steps">
             <li>
-              Heat the milk in a saucepan without bringing it to a boil. Add
-              sugar and cocoa powder.
+              Heat the milk in a saucepan without bringing it to a boil.
             </li>
 
             <li>
-              At the same time, prepare a water bath. Melt the butter on it.
+              Add sugar and cocoa powder while continuously stirring.
             </li>
 
             <li>
-              Mix the milk mixture and already liquid butter. Mix thoroughly
-              with a silicone spatula so that the mass becomes uniform and
-              silky.
+              Prepare a water bath and slowly melt the butter until smooth.
             </li>
 
-            <li>Heat the mixture over low heat, letting it barely boil.</li>
+            <li>
+              Combine all ingredients and mix until silky and uniform.
+            </li>
 
             <li>
-              Pour the chocolate into special containers and allow it to cool
-              and harden.
+              Pour into molds, cool completely, and allow the chocolate to
+              harden.
             </li>
           </ul>
         </div>
