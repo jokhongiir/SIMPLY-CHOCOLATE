@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
-import aboutVideoPreview from "../../assets/video.png";
+import aboutVideoPreview from "../../assets/chocolote_spoler-2d8faa6d.mp4";
+import posterVideo from '../../assets/video.png'
 
 const About = () => {
   return (
@@ -13,11 +14,13 @@ const About = () => {
 
       <div className="about-container">
         <div className="about-video-wrapper">
-          <img
+          <video
+            controls 
+            poster={posterVideo}
             src={aboutVideoPreview}
             alt="How chocolate is made"
             className="about-video-img"
-          />
+          > </video>
           <button className="play-btn" aria-label="Play video">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z" />
