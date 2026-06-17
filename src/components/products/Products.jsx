@@ -5,17 +5,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
-// import "swiper/css/pagination";
+
+import orange from '../../assets/Chocolats/orange.png'
+import apple from '../../assets/Chocolats/apple&cranberry.png'
+import lime from '../../assets/Chocolats/lime&seasalt.png'
+import pineapple from '../../assets/Chocolats/pineapple.png'
+import classicmilk from '../../assets/Chocolats/classicmilk.png'
+import honey from '../../assets/Chocolats/honey.png'
+import roasted from '../../assets/Chocolats/roasted.png'
+import classicwhite from '../../assets/Chocolats/classicwhite.png'
 
 const PRODUCTS_DATA = [
-  { id: 1, name: "ORANGE", type: "Dark chocolate", price: "45 UAH", img: "/images/orange.png" },
-  { id: 2, name: "APPLE & CRANBERRY", type: "Milk chocolate", price: "50 UAH", img: "/images/apple.png" },
-  { id: 3, name: "LIME & SEA SALT", type: "Dark chocolate", price: "66 UAH", img: "/images/lime.png" },
-  { id: 4, name: "PINEAPPLE", type: "Dark chocolate", price: "54 UAH", img: "/images/pineapple.png" },
-  { id: 5, name: "CLASSIC", type: "Milk chocolate", price: "45 UAH", img: "/images/classic_milk.png" },
-  { id: 6, name: "HONEY", type: "Milk chocolate", price: "50 UAH", img: "/images/honey.png" },
-  { id: 7, name: "ROASTED FRUITS", type: "Dark chocolate", price: "66 UAH", img: "/images/roasted.png" },
-  { id: 8, name: "CLASSIC", type: "White chocolate", price: "54 UAH", img: "/images/classic_white.png" },
+  { id: 1, name: "ORANGE", type: "Dark chocolate", price: "45 UAH", img: orange },
+  { id: 2, name: "APPLE & CRANBERRY", type: "Milk chocolate", price: "50 UAH", img: apple },
+  { id: 3, name: "LIME & SEA SALT", type: "Dark chocolate", price: "66 UAH", img: lime },
+  { id: 4, name: "PINEAPPLE", type: "Dark chocolate", price: "54 UAH", img: pineapple },
+  { id: 5, name: "CLASSIC", type: "Milk chocolate", price: "45 UAH", img: classicmilk },
+  { id: 6, name: "HONEY", type: "Milk chocolate", price: "50 UAH", img: honey },
+  { id: 7, name: "ROASTED FRUITS", type: "Dark chocolate", price: "66 UAH", img: roasted },
+  { id: 8, name: "CLASSIC", type: "White chocolate", price: "54 UAH", img: classicwhite },
 ];
 
 export default function Products() {

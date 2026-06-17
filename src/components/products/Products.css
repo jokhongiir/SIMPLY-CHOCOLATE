@@ -53,13 +53,14 @@
   position: absolute;
   inset: 0;
   border-radius: 30px;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at var(--x, 50%) var(--y, 50%),
     rgba(253,146,34,0.15),
     transparent 60%
-  );
+  ); */
   opacity: 0;
   transition: 0.3s;
+  border: 2px solid  #fd9222;
 }
 
 .product-card:hover::before {
