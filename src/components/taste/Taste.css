@@ -171,6 +171,9 @@
 }
 
 @media (max-width: 600px) {
+  .taste {
+    padding: 0 20px;
+  }
   .taste-grid {
     grid-template-columns: 1fr;
   }
