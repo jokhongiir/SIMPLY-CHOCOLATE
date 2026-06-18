@@ -7,6 +7,7 @@ import About from './components/about/About'
 import Products from './components/products/Products'
 import Sellers from './components/sellers/Sellers'
 import Loved from './components/loved/Loved'
+import Subscribe from './components/subscribe/Subscribe'
 
 const App = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -42,6 +43,7 @@ const App = () => {
       <Products/>
       <Sellers/>
       <Loved/>
+      <Subscribe/>
 
       {/* Scroll to Top Tugmasi */}
       <button 

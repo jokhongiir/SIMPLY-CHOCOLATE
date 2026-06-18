@@ -1,0 +1,172 @@
+.subscribe-section {
+  width: 100%;
+  padding: 120px 0;
+}
+
+.subscribe-banner {
+  position: relative;
+
+  width: min(1400px, 100%);
+  height: 520px;
+
+  margin: 0 auto;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.25)
+    );
+
+  backdrop-filter: blur(2px);
+}
+
+.subscribe-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.subscribe-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+
+  line-height: 1.15;
+  letter-spacing: -1px;
+
+  color: #fff;
+
+  margin-bottom: 30px;
+}
+
+.subscribe-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  margin-bottom: 45px;
+}
+
+.subscribe-btn {
+  border: none;
+  outline: none;
+
+  padding: 18px 55px;
+
+  border-radius: 999px;
+
+  background: #fd9222;
+
+  color: white;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all .35s ease;
+
+  box-shadow:
+    0 15px 35px rgba(253, 146, 34, .35);
+}
+
+.subscribe-btn:hover {
+  transform: translateY(-5px);
+
+  background: #ff9d34;
+
+  box-shadow:
+    0 20px 45px rgba(253, 146, 34, .45);
+}
+
+.subscribe-btn:active {
+  transform: scale(.97);
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .subscribe-banner {
+    height: 450px;
+  }
+
+  .subscribe-title {
+    font-size: 3rem;
+  }
+
+  .subscribe-text {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .subscribe-section {
+    padding: 90px 0;
+  }
+
+  .subscribe-banner {
+    height: 420px;
+    border-radius: 24px;
+  }
+
+  .subscribe-content {
+    padding: 25px;
+  }
+
+  .subscribe-title {
+    font-size: 2rem;
+  }
+
+  .subscribe-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .subscribe-btn {
+    width: 100%;
+    max-width: 260px;
+
+    padding: 16px 30px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .subscribe-banner {
+    height: 380px;
+  }
+
+  .subscribe-title {
+    font-size: 1.7rem;
+  }
+
+  .subscribe-text {
+    font-size: 0.9rem;
+  }
+}
