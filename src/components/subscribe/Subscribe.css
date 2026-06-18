@@ -28,12 +28,7 @@
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.25)
-    );
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
 
   backdrop-filter: blur(2px);
 }
@@ -87,10 +82,9 @@
 
   cursor: pointer;
 
-  transition: all .35s ease;
+  transition: all 0.35s ease;
 
-  box-shadow:
-    0 15px 35px rgba(253, 146, 34, .35);
+  box-shadow: 0 15px 35px rgba(253, 146, 34, 0.35);
 }
 
 .subscribe-btn:hover {
@@ -98,12 +92,11 @@
 
   background: #ff9d34;
 
-  box-shadow:
-    0 20px 45px rgba(253, 146, 34, .45);
+  box-shadow: 0 20px 45px rgba(253, 146, 34, 0.45);
 }
 
 .subscribe-btn:active {
-  transform: scale(.97);
+  transform: scale(0.97);
 }
 
 /* Tablet */
