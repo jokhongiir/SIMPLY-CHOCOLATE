@@ -1,149 +1,93 @@
 import React from "react";
 import "./Taste.css";
 
-// Swiper komponentlari va modullarini import qilamiz
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-
-// Swiper uchun zarur bo'lgan CSS stillari
-import "swiper/css";
-import "swiper/css/pagination";
-
-// Rasmlar importi
 import chocolatee from "../../assets/chocolatee.png";
 import milk from "../../assets/milk.png";
 import walnut from "../../assets/walnut.png";
 import cofee from "../../assets/cofee.png";
 
-const ingredients = [
+const data = [
   {
-    id: 1,
     title: "MILK CHOCOLATE",
     image: chocolatee,
-    variant: "orange",
-    detailTitle: "Milk Chocolate",
-    tagPrimary: "Chocolate",
-    tagSecondary: "Benefits",
+    color: "orange",
+    backTitle: "Milk chocolate",
+    tag1: "chocolate",
+    tag2: "the benefits",
     description:
-      "Milk chocolate is a solid chocolate confectionery containing cocoa, sugar and milk. It is one of the most popular chocolate varieties around the world.",
+      "Milk chocolate is a solid chocolate confectionery containing cocoa, sugar and milk. It is the most consumed type of chocolate.",
   },
   {
-    id: 2,
     title: "MILK",
     image: milk,
-    variant: "white",
-    detailTitle: "Milk",
-    tagPrimary: "Milk",
-    tagSecondary: "Benefits",
+    color: "white",
+    backTitle: "Milk",
+    tag1: "milk",
+    tag2: "the benefits",
     description:
-      "Milk is a nutrient-rich liquid food produced by mammals. It contains proteins, vitamins, calcium and minerals essential for growth and development.",
+      "Milk is a white liquid food produced by the mammary glands of mammals. It is the primary source of nutrition for young mammals (including breastfed human infants) before they are able to digest solid food.Early-lactation milk, which is called colostrum,",
   },
   {
-    id: 3,
     title: "NUTS",
     image: walnut,
-    variant: "dark",
-    detailTitle: "Nuts",
-    tagPrimary: "Nuts",
-    tagSecondary: "Benefits",
+    color: "dark",
+    backTitle: "Nuts",
+    tag1: "nuts",
+    tag2: "the benefits",
     description:
-      "Walnuts, almonds and pistachios contain healthy fats, vitamins and antioxidants that support heart health and overall wellness.",
+      "Almonds, pistachios, and walnuts are some types of nuts that contain healthy nutrients. When eaten as part of a nutrient-dense diet, these 9 nuts may offer benefits such as reducing your risk of heart disease. They’re a good source",
   },
   {
-    id: 4,
     title: "SEMI-SWEET CHOCOLATE",
     image: cofee,
-    variant: "outline",
-    detailTitle: "Semi-Sweet",
-    tagPrimary: "Chocolate",
-    tagSecondary: "Benefits",
+    color: "outline",
+    backTitle: "Semi Sweet",
+    tag1: "sweet chocolate",
+    tag2: "the benefits",
     description:
-      "Semi-sweet chocolate contains a higher cocoa percentage and delivers a richer taste profile while maintaining a balanced sweetness.",
+      "Semi-sweet chocolate has a cocoa solid content of 35 to 65%. One of the best ways to gain an understanding of this type of chocolate is to compare it to a different type of chocolate. Semisweet is darker",
   },
 ];
 
 const Taste = () => {
   return (
-    <section className="taste-section" id="ingredients">
-      <div className="taste-container">
-        
-        <div className="taste-heading">
-          <h2 className="taste-title">
-            IT ALL ADDS UP TO ONE EXCEPTIONAL
-            <span> TASTE </span>
-            SENSATION
-          </h2>
+    <section className="taste">
+      <div className="taste-header">
+        <h2>
+          IT ALL ADDS UP TO ONE EXCEPTIONAL
+          <span> TASTE </span>
+          SENSATION
+        </h2>
 
-          <p className="taste-description">
-            At Simply Chocolate, we believe that the secret to exceptional
-            chocolate is hidden in every ingredient. Each element contributes
-            to an unforgettable taste experience.
-          </p>
-        </div>
+        <p>
+          At Simply Chocolate, we believe that the secret to exceptional
+          chocolate is in the details. Every ingredient contributes to an
+          unforgettable taste experience.
+        </p>
+      </div>
 
-        {/* Eski 'ingredient-grid' o'rniga Swiper-ni joylashtiramiz */}
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          className="ingredient-swiper"
-          spaceBetween={30}
-          slidesPerView={4}
-          loop={true}
-          speed={900}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1200: {
-              slidesPerView: 4,
-            },
-          }}
-        >
-          {ingredients.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="ingredient-card">
-                <div className="ingredient-card-inner">
-                  
-                  {/* Front Side */}
-                  <div className={`ingredient-front ingredient-${item.variant}`}>
-                    <div className="ingredient-image-wrapper">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="ingredient-image"
-                      />
-                    </div>
-
-                    <h3 className="ingredient-name">{item.title}</h3>
-                  </div>
-
-                  {/* Back Side */}
-                  <div className="ingredient-back">
-                    <h3 className="ingredient-back-title">{item.detailTitle}</h3>
-
-                    <div className="ingredient-tags">
-                      <span className="tag-primary">{item.tagPrimary}</span>
-                      <span className="tag-secondary">{item.tagSecondary}</span>
-                    </div>
-
-                    <p className="ingredient-back-text">{item.description}</p>
-                  </div>
-
-                </div>
+      <div className="taste-grid">
+        {data.map((item, index) => (
+          <div className="flip-card" key={index}>
+            <div className="flip-card-inner">
+              <div className={`flip-front ${item.color}`}>
+                <img src={item.image} alt={item.title} />
+                <h3>{item.title}</h3>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
 
+              <div className="flip-back">
+                <h3>{item.backTitle}</h3>
+
+                <div className="tags">
+                  <span className="orange-tag">{item.tag1}</span>
+                  <span className="white-tag">{item.tag2}</span>
+                </div>
+
+                <p>{item.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
