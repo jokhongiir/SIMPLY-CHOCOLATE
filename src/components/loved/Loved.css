@@ -1,0 +1,234 @@
+.choco-love-area {
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.choco-love-container {
+  width: min(1400px, 80%);
+  margin: 0 auto;
+}
+
+.choco-love-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.choco-love-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.choco-love-title span {
+  color: #fd9222;
+}
+
+/* SWIPER */
+
+.choco-review-swiper {
+  padding-top: 60px;
+  padding-bottom: 90px !important;
+}
+
+/* CARD */
+
+.choco-review-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 24px;
+  min-height: 260px;
+
+  padding: 65px 32px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition: all 0.45s ease;
+  cursor: pointer;
+
+  overflow: visible;
+}
+
+.choco-review-card:hover {
+  transform: translateY(-12px);
+  border-color: transparent;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08),
+    0 4px 15px rgba(253, 146, 34, 0.12);
+}
+
+/* AVATAR */
+
+.choco-review-photo {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.choco-review-photo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #ffffff;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.4s ease;
+}
+
+.choco-review-card:hover .choco-review-photo img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+
+.choco-review-content {
+  width: 100%;
+}
+
+.choco-review-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+
+  margin-bottom: 18px;
+}
+
+.choco-review-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #5c5c5c;
+
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* PAGINATION */
+
+.choco-review-swiper .swiper-pagination {
+  bottom: 10px !important;
+}
+
+.choco-review-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+
+  background: #d4d4d4;
+  opacity: 1;
+
+  transition: all 0.35s ease;
+}
+
+.choco-review-swiper .swiper-pagination-bullet-active {
+  width: 32px;
+  border-radius: 30px;
+
+  background: #fd9222;
+}
+
+/* BUTTON */
+
+.choco-review-action {
+  display: flex;
+  justify-content: center;
+}
+
+.choco-review-btn {
+  padding: 16px 42px;
+
+  background: transparent;
+
+  border: 2px solid #fd9222;
+  border-radius: 999px;
+
+  color: #111111;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+.choco-review-btn:hover {
+  background: #fd9222;
+  color: white;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(253, 146, 34, 0.3);
+}
+
+/* TABLET */
+
+@media (max-width: 992px) {
+  .choco-love-area {
+    padding: 100px 0;
+  }
+
+  .choco-love-header {
+    margin-bottom: 70px;
+  }
+
+  .choco-review-card {
+    min-height: 300px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .choco-love-area {
+    padding: 80px 0;
+  }
+
+  .choco-love-header {
+    margin-bottom: 60px;
+  }
+
+  .choco-review-card {
+    min-height: auto;
+    padding: 65px 24px 28px;
+  }
+
+  .choco-review-name {
+    font-size: 1.3rem;
+  }
+
+  .choco-review-text {
+    font-size: 0.95rem;
+  }
+
+  .choco-review-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .choco-review-photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .choco-review-card {
+    padding: 60px 20px 24px;
+  }
+
+  .choco-review-text {
+    line-height: 1.6;
+  }
+}

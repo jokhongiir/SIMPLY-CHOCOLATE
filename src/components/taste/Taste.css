@@ -1,192 +1,280 @@
-.taste {
-  max-width: 1400px;
-  margin: 100px auto;
-  padding: 0 0px;
-  font-family: "Montserrat", sans-serif;
+.taste-section {
+  width: min(1400px, 92%);
+  margin: 140px auto;
+  position: relative;
 }
 
-.taste-header {
+.taste-container {
+  width: 100%;
+}
+
+.taste-heading {
   max-width: 760px;
-  margin: 0 auto 70px;
+  margin: 0 auto 80px;
   text-align: center;
 }
 
-.taste-header h2 {
-  font-size: clamp(28px, 3vw, 40px);
+.taste-title {
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
   color: #111;
+  letter-spacing: -1px;
 }
 
-.taste-header span {
+.taste-title span {
   color: #fd9222;
 }
 
-.taste-header p {
-  margin-top: 20px;
-  color: #666;
+.taste-description {
+  margin-top: 24px;
+  font-size: 16px;
   line-height: 1.8;
+  color: #6b6b6b;
 }
 
-.taste-grid {
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+/* ==========================================
+   SWIPER STYLES (Yangi qo'shilgan qism)
+   ========================================== */
+.ingredient-swiper {
+  padding-top: 10px;
+  padding-bottom: 90px !important;
 }
 
-.flip-card {
-  height: 320px;
-  perspective: 1200px;
+.ingredient-swiper .swiper-pagination {
+  bottom: 10px !important;
 }
 
-.flip-card-inner {
+.ingredient-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d4d4d4;
+  opacity: 1;
+  transition: all .35s ease;
+}
+
+.ingredient-swiper .swiper-pagination-bullet-active {
+  width: 32px;
+  border-radius: 30px;
+  background: #fd9222;
+}
+
+/* ==========================================
+   CARD STYLES
+   ========================================== */
+.ingredient-card {
+  height: 340px;
+  perspective: 1500px;
+}
+
+.ingredient-card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
-
   transform-style: preserve-3d;
-  transition: transform 0.8s ease;
+  transition: transform .9s cubic-bezier(.4,.2,.2,1);
 }
 
-.flip-card:hover .flip-card-inner {
+/* Card hover bo'lganda orqa tomonini ko'rsatish (YFLIP) */
+.ingredient-card:hover .ingredient-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-front,
-.flip-back {
+/* FRONT + BACK GLOBAL */
+.ingredient-front,
+.ingredient-back {
   position: absolute;
   inset: 0;
-
   border-radius: 24px;
-
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  overflow: hidden;
 }
 
-.flip-front {
+/* FRONT SIDE (Siz bergan yangi animatsiya bilan) */
+.ingredient-front {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  padding: 25px;
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.08),
+    0 4px 15px rgba(253,146,34,.08);
+  transition: all .45s ease;
 }
 
-.flip-front img {
-  width: 160px;
-  transition: 0.4s;
+/* Hover bo'lganda yuqoriga ko'tarilishi */
+.ingredient-card:hover .ingredient-front {
+  transform: translateY(-12px);
 }
 
-.flip-front h3 {
-  margin-top: 25px;
-  font-size: 18px;
-  font-weight: 700;
+.ingredient-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.flip-card:hover .flip-front img {
+.ingredient-image {
+  width: 180px;
+  object-fit: contain;
+  transition: all .5s ease;
+}
+
+/* Hover bo'lganda rasm kattalashishi */
+.ingredient-card:hover .ingredient-image {
   transform: scale(1.08);
 }
 
-.orange {
-  background: #fd9222;
+.ingredient-name {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* VARIANTS */
+.ingredient-orange {
+  background: linear-gradient(135deg, #fd9222, #ffb357);
   color: white;
 }
 
-.white {
+.ingredient-white {
   background: white;
   color: #111;
   border: 2px solid #fd9222;
 }
 
-.dark {
-  background: #1a1420;
+.ingredient-dark {
+  background: linear-gradient(135deg, #1e1823, #342a3d);
   color: white;
 }
 
-.outline {
+.ingredient-outline {
   background: white;
   color: #111;
   border: 2px solid #ececec;
 }
 
-.flip-back {
+/* BACK SIDE */
+.ingredient-back {
   background: white;
-  padding: 24px;
-
   transform: rotateY(180deg);
-
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   border: 2px solid #fd9222;
+  box-shadow: 0 20px 50px rgba(253,146,34,.15);
 }
 
-.flip-back h3 {
+.ingredient-back-title {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 16px;
+  color: #111;
+  margin-bottom: 18px;
 }
 
-.flip-back p {
-  color: #555;
-  line-height: 1.7;
+.ingredient-back-text {
   font-size: 14px;
+  line-height: 1.75;
+  color: #555;
 }
 
-.tags {
+/* TAGS */
+.ingredient-tags {
   display: flex;
   gap: 10px;
-  margin-bottom: 18px;
   flex-wrap: wrap;
+  margin-bottom: 18px;
 }
 
-.tags span {
-  padding: 8px 14px;
-  border-radius: 40px;
+.tag-primary,
+.tag-secondary {
+  padding: 8px 16px;
+  border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
 }
 
-.orange-tag {
+.tag-primary {
   background: #fd9222;
   color: white;
+  box-shadow: 0 5px 15px rgba(253,146,34,.25);
 }
 
-.white-tag {
-  border: 1px solid #ddd;
+.tag-secondary {
   background: white;
+  color: #111;
+  border: 1px solid #ddd;
 }
 
-@media (max-width: 1100px) {
-  .taste {
-    padding: 0 20px;
+/* GLOW EFFECT */
+.ingredient-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(253,146,34,.2),
+    transparent,
+    rgba(253,146,34,.2)
+  );
+  opacity: 0;
+  transition: .4s ease;
+  z-index: -1;
+}
+
+.ingredient-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================== */
+@media (max-width: 768px) {
+  .taste-section {
+    margin: 100px auto;
   }
-  .taste-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .taste-heading {
+    margin-bottom: 60px;
+  }
+
+  .ingredient-card {
+    height: 320px;
+  }
+
+  .ingredient-image {
+    width: 150px;
+  }
+
+  .ingredient-back-title {
+    font-size: 20px;
   }
 }
 
-@media (max-width: 600px) {
-  .taste {
-    padding: 0 20px;
-  }
-  .taste-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .taste-title {
+    font-size: 28px;
   }
 
-  .flip-card {
+  .taste-description {
+    font-size: 15px;
+  }
+
+  .ingredient-name {
+    font-size: 16px;
+  }
+
+  .ingredient-back-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .ingredient-card {
     height: 300px;
-  }
-
-  .taste-header {
-    text-align: left;
-  }
-
-  .taste-header h2 {
-    font-size: 24px;
   }
 }
