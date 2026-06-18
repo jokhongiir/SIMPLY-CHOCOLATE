@@ -1,6 +1,6 @@
 .subscribe-section {
   width: 100%;
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 .subscribe-banner {
@@ -102,6 +102,9 @@
 /* Tablet */
 
 @media (max-width: 992px) {
+  .subscribe-section {
+    padding: 0px 20px;
+  }
   .subscribe-banner {
     height: 450px;
   }
@@ -119,7 +122,7 @@
 
 @media (max-width: 768px) {
   .subscribe-section {
-    padding: 90px 0;
+    padding: 40px 20px;
   }
 
   .subscribe-banner {
