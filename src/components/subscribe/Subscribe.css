@@ -122,7 +122,7 @@
 
 @media (max-width: 768px) {
   .subscribe-section {
-    padding: 40px 15px;
+    padding: 0px 15px 40px;
   }
 
   .subscribe-banner {
@@ -155,7 +155,7 @@
 
 @media (max-width: 480px) {
   .subscribe-banner {
-    height: 380px;
+    height: 500px;
   }
 
   .subscribe-title {

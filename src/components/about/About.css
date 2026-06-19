@@ -1,5 +1,5 @@
 .about-section {
-  padding: 140px 0px 20px;
+  padding: 140px 0px 40px;
 }
 
 .about-container {
@@ -125,7 +125,7 @@
 
 @media (max-width: 576px) {
   .about-section {
-    padding: 0px 15px;
+    padding: 100px 15px 0px;
   }
 
   .about-video-wrapper {
