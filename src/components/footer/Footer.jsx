@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-
         <div className="footer-top">
           <div className="footer-left">
             <h2>
@@ -19,12 +18,8 @@ const Footer = () => {
           <div className="footer-right">
             <div className="footer-contact">
               <h4>Contact us</h4>
-              <a href="tel:+380684439426">
-                +380 (68) 443-94-26
-              </a>
-              <a href="mailto:simplychoc@gmail.com">
-                simplychoc@gmail.com
-              </a>
+              <a href="tel:+380684439426">+380 (68) 443-94-26</a>
+              <a href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
             </div>
 
             <div className="footer-social">
@@ -47,7 +42,6 @@ const Footer = () => {
           <a href="#sellers">Top sellers</a>
           <a href="#reviews">Chocolate is loved</a>
         </div>
-
       </div>
     </footer>
   );
