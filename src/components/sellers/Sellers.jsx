@@ -9,13 +9,10 @@ const Sellers = () => {
   return (
     <section id="sellers" className="sellers">
       <div className="sellers__container">
-
-        {/* TITLE */}
         <h2 className="sellers__title">
           <span>TOP</span> SELLERS
         </h2>
 
-        {/* GRID */}
         <div className="sellers__grid">
           {[img1, img3, img2].map((img, index) => (
             <div key={index} className="sellers__card">
@@ -26,7 +23,6 @@ const Sellers = () => {
           ))}
         </div>
 
-        {/* FOOTER */}
         <div className="sellers__footer">
           <p className="sellers__text">
             Crazy enough chocolate originates from a bean just like the coffee
@@ -34,11 +30,8 @@ const Sellers = () => {
             was first discovered by the Native American tribe called the Mayans.
           </p>
 
-          <button className="sellers__btn">
-            Buy now
-          </button>
+          <button className="sellers__btn">Buy now</button>
         </div>
-
       </div>
     </section>
   );
