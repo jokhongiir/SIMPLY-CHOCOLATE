@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/* Butun sayt uchun silliq skrol (Smooth Scroll) */
 html {
   scroll-behavior: smooth;
 }
@@ -22,9 +21,6 @@ body {
   color: #111;
 }
 
-/* ==========================================
-   SCROLL TO TOP BUTTON STYLES
-   ========================================== */
 .scroll-to-top-btn {
   cursor: pointer;
   position: fixed;
@@ -43,33 +39,23 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  
-  /* Dastlab yashirin va pastroqda bo'ladi */
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  
-  /* Silliq paydo bo'lish animatsiyasi */
   transition: all 0.4s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
-/* Skrol qilinganda paydo bo'ladigan klass */
 .scroll-to-top-btn.visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
-/* Hover effekti */
 .scroll-to-top-btn:hover {
   background-color: #fd9222;
   color: #ffffff;
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(253, 146, 34, 0.4);
 }
-
-/* Mobil qurilmalar uchun moslashtirish */
 @media (max-width: 768px) {
   .scroll-to-top-btn {
     bottom: 20px;
