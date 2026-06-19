@@ -4,7 +4,7 @@
 }
 
 .choco-love-container {
-  width: min(1400px, 80%);
+  width: min(1400px, 100%);
   margin: 0 auto;
 }
 
@@ -175,7 +175,7 @@
 
 @media (max-width: 992px) {
   .choco-love-area {
-    padding: 100px 0;
+    padding: 100px 15px;
   }
 
   .choco-love-header {
@@ -191,7 +191,7 @@
 
 @media (max-width: 768px) {
   .choco-love-area {
-    padding: 80px 0;
+    padding: 80px 15px;
   }
 
   .choco-love-header {
