@@ -148,7 +148,7 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .products-section {
-    padding: 80px 20px;
+    padding: 80px 15px;
   }
   .product-card {
     padding: 28px 24px;

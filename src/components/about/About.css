@@ -112,7 +112,7 @@
 
 @media (max-width: 992px) {
   .about-section {
-    padding: 50px 20px;
+    padding: 50px 15px;
   }
   .about-container {
     flex-direction: column;
@@ -125,7 +125,7 @@
 
 @media (max-width: 576px) {
   .about-section {
-    padding: 0px 20px;
+    padding: 0px 15px;
   }
 
   .about-video-wrapper {

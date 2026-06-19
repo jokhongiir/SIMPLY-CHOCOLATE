@@ -163,7 +163,7 @@
 
 @media (max-width: 1100px) {
   .taste {
-    padding: 0 20px;
+    padding: 0 15px;
   }
   .taste-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -172,7 +172,7 @@
 
 @media (max-width: 600px) {
   .taste {
-    padding: 0 20px;
+    padding: 0 15px;
   }
   .taste-grid {
     grid-template-columns: 1fr;
