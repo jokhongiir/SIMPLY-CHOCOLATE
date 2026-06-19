@@ -106,9 +106,7 @@ const Loved = () => {
         </Swiper>
 
         <div className="choco-review-action">
-          <button className="choco-review-btn">
-            Leave a review
-          </button>
+          <button className="choco-review-btn">Leave a review</button>
         </div>
       </div>
     </section>

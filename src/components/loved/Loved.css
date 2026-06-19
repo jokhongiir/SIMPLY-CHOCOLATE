@@ -25,14 +25,10 @@
   color: #fd9222;
 }
 
-/* SWIPER */
-
 .choco-review-swiper {
   padding-top: 60px;
   padding-bottom: 90px !important;
 }
-
-/* CARD */
 
 .choco-review-card {
   position: relative;
@@ -62,8 +58,6 @@
     0 4px 15px rgba(253, 146, 34, 0.12);
 }
 
-/* AVATAR */
-
 .choco-review-photo {
   position: absolute;
   top: -45px;
@@ -80,8 +74,7 @@
 
   border: 4px solid #ffffff;
 
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 
   transition: all 0.4s ease;
 }
@@ -89,8 +82,6 @@
 .choco-review-card:hover .choco-review-photo img {
   transform: scale(1.08);
 }
-
-/* CONTENT */
 
 .choco-review-content {
   width: 100%;
@@ -113,8 +104,6 @@
   margin: 0 auto;
 }
 
-/* PAGINATION */
-
 .choco-review-swiper .swiper-pagination {
   bottom: 10px !important;
 }
@@ -135,8 +124,6 @@
 
   background: #fd9222;
 }
-
-/* BUTTON */
 
 .choco-review-action {
   display: flex;
@@ -167,11 +154,8 @@
 
   transform: translateY(-4px);
 
-  box-shadow:
-    0 10px 25px rgba(253, 146, 34, 0.3);
+  box-shadow: 0 10px 25px rgba(253, 146, 34, 0.3);
 }
-
-/* TABLET */
 
 @media (max-width: 992px) {
   .choco-love-area {
@@ -186,8 +170,6 @@
     min-height: 300px;
   }
 }
-
-/* MOBILE */
 
 @media (max-width: 768px) {
   .choco-love-area {
@@ -216,8 +198,6 @@
     max-width: 260px;
   }
 }
-
-/* SMALL MOBILE */
 
 @media (max-width: 480px) {
   .choco-review-photo img {
