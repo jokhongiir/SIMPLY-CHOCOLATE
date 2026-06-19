@@ -16,15 +16,14 @@ const Header = () => {
     { title: "Chocolate is loved", link: "#reviews" },
   ];
 
-  // Eng tepaga silliq chiqaradigan funksiya
   const handleNavClick = (e, link) => {
-    closeMenu(); // Mobil menyuni yopish
+    closeMenu();
 
     if (link === "#home") {
-      e.preventDefault(); // Standart href xatti-harakatini to'xtatamiz
+      e.preventDefault();
       window.scrollTo({
         top: 0,
-        behavior: "smooth", // CSS'dagi kabi silliq siljiydi
+        behavior: "smooth",
       });
     }
   };
@@ -43,7 +42,7 @@ const Header = () => {
               key={index}
               href={item.link}
               style={{ "--i": index }}
-              onClick={(e) => handleNavClick(e, item.link)} // Yangi boshqaruvchi funksiya
+              onClick={(e) => handleNavClick(e, item.link)}
             >
               {item.title}
             </a>
