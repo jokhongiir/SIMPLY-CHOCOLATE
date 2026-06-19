@@ -25,13 +25,11 @@
   color: #fd9222;
 }
 
-/* SWIPER CONTAINER */
 .products-swiper {
   padding-top: 20px;
   padding-bottom: 90px !important;
 }
 
-/* CARD */
 .product-card {
   width: 100%;
   background: #ffffff;
@@ -43,7 +41,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 420px;
-  
+
   transition: all 0.45s ease;
   cursor: pointer;
 }
@@ -56,7 +54,6 @@
     0 4px 15px rgba(253, 146, 34, 0.12);
 }
 
-/* IMAGE BOX */
 .product-image-box {
   height: 200px;
   display: flex;
@@ -76,7 +73,6 @@
   transform: scale(1.08) rotate(-4deg);
 }
 
-/* CONTENT */
 .product-content {
   width: 100%;
 }
@@ -94,7 +90,6 @@
   margin-bottom: 24px;
 }
 
-/* BUTTON (PRICE) */
 .product-action {
   display: flex;
   justify-content: center;
@@ -118,7 +113,6 @@
   box-shadow: 0 10px 25px rgba(253, 146, 34, 0.25);
 }
 
-/* PAGINATION (Loved stili bilan bir xil) */
 .products-swiper .swiper-pagination {
   bottom: 10px !important;
 }
@@ -137,15 +131,12 @@
   background: #fd9222;
 }
 
-/* TABLET */
 @media (max-width: 992px) {
- 
   .product-card {
     min-height: 400px;
   }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .products-section {
     padding: 100px 15px 30px;
@@ -163,7 +154,6 @@
   }
 }
 
-/* SMALL MOBILE */
 @media (max-width: 480px) {
   .product-image-box {
     height: 160px;
