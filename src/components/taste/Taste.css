@@ -172,7 +172,7 @@
 
 @media (max-width: 600px) {
   .taste {
-    padding: 0 15px 0px;
+    padding: 0px 15px 0px;
   }
   .taste-grid {
     grid-template-columns: 1fr;
