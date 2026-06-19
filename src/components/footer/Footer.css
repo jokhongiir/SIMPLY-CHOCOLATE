@@ -1,0 +1,156 @@
+.footer {
+  width: 100%;
+  background: #11101d;
+  padding: 90px 20px 40px;
+  color: #fff;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.footer-left h2 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 550px;
+  color: #fff;
+}
+
+.footer-left span {
+  color: #fd9222;
+}
+
+.footer-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.footer-contact h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact a {
+  color: #ffffffcc;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footer-contact a:hover {
+  color: #fd9222;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #fd9222;
+  transform: translateY(-4px);
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 60px 0 40px;
+}
+
+.footer-bottom {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.footer-bottom a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #fd9222;
+  transition: 0.4s;
+}
+
+.footer-bottom a:hover::after {
+  width: 100%;
+}
+
+.footer-bottom a:hover {
+  color: #fd9222;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-left h2 {
+    font-size: 34px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 70px 20px 30px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-left h2 {
+    font-size: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-social a {
+    font-size: 28px;
+  }
+}

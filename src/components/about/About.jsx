@@ -21,7 +21,7 @@ const About = () => {
   };
 
   return (
-    <section id="howitsmade" className="about-section">
+    <section id="made" className="about-section">
       <div className="taste-header">
         <h2>
           HOW IT'S <span>MADE?</span>
