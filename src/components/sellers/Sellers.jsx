@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react"; // useState import qilindi
 import "./Sellers.css";
+import BuyModal from "../buymodal/BuyModal"; // BuyModal komponentini import qildik
 
 import img1 from "../../assets/choco1.png";
 import img2 from "../../assets/choco2.png";
 import img3 from "../../assets/choco3.png";
 
 const Sellers = () => {
+  // Modalni boshqarish uchun state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section id="sellers" className="sellers">
       <div className="sellers__container">
@@ -30,9 +34,15 @@ const Sellers = () => {
             was first discovered by the Native American tribe called the Mayans.
           </p>
 
-          <button className="sellers__btn">Buy now</button>
+          {/* Tugmaga klik bo'lganda stateni true qilamiz */}
+          <button className="sellers__btn" onClick={() => setIsModalOpen(true)}>
+            Buy now
+          </button>
         </div>
       </div>
+
+      {/* Modalni komponentga ulash va kerakli propslarni uzatish */}
+      <BuyModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };
