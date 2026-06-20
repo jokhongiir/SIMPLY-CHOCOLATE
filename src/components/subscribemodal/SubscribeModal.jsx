@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SubscribeModal.css';
-import choco from '../../assets/choco.png'; // O'zingiz import qilgan rasm
+import choco from '../../assets/choco.png';
 
 const SubscribeModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
@@ -11,23 +11,16 @@ const SubscribeModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     console.log('Obuna bo‘lgan email:', email);
     
-    // Bu yerda backend yoki API ga yuborish logikasi bo'ladi
-    
     setEmail('');
-    onClose(); // Email yuborilgach modalni yopish
+    onClose();
   };
 
   return (
-    // Modal orqasidagi qorong'u fon bosilganda modal yopiladi
     <div className="modal-overlay" onClick={onClose}>
-      
-      {/* stopPropagation modal ichki qismi bosilganda yopilib ketmasligini ta'minlaydi */}
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        
-        {/* Yuqori qism: Shokoladli rasm va yopish tugmasi */}
         <div 
           className="modal-banner"
-          style={{ backgroundImage: `url(${choco})` }} // choco rasmi shu yerga o'rnatildi
+          style={{ backgroundImage: `url(${choco})` }}
         >
           <button className="modal-close-btn" onClick={onClose} aria-label="Yopish">
             <svg 
@@ -47,7 +40,6 @@ const SubscribeModal = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Pastki qism: Matn va Form */}
         <div className="modal-content">
           <h2 className="modal-title">
             EXPLORE OUR <br />
