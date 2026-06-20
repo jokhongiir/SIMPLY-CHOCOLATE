@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // useState-ni import qildik
+import React, { useState } from "react"; 
 import "./Home.css";
 import BuyModal from "../buymodal/BuyModal"; // BuyModal komponentini to'g'ri yo'l bilan import qiling
 

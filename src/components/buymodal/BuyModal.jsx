@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // useEffect qo'shildi
+import React, { useState, useEffect } from "react";
 import "./BuyModal.css";
 import { X } from "lucide-react";
 
@@ -10,20 +10,17 @@ const BuyModal = ({ isOpen, onClose }) => {
   const [selectedProduct, setSelectedProduct] = useState("100g");
   const [cardNumber, setCardNumber] = useState("");
 
-  // --- ORQA FONDAGI SKROLLNI BLOKLASH QISMI ---
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"; // Skrollni o'chirish
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset"; // Skrollni tiklash
+      document.body.style.overflow = "unset";
     }
 
-    // Komponent unmount bo'lganda (o'chganda) xavfsizlik uchun skrollni ochib yuborish
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
-  // --------------------------------------------
 
   if (!isOpen) return null;
 
@@ -47,32 +44,44 @@ const BuyModal = ({ isOpen, onClose }) => {
         </h2>
 
         <div className="buymodal-products">
-          <div 
+          <div
             className={`buymodal-card ${selectedProduct === "100g" ? "active" : ""}`}
             onClick={() => setSelectedProduct("100g")}
           >
             <div className="buymodal-img-wrapper">
-              <img src={choco1} alt="Chocolate" className="buymodal-card-image" />
+              <img
+                src={choco1}
+                alt="Chocolate"
+                className="buymodal-card-image"
+              />
             </div>
             <span className="buymodal-card-weight">100 g</span>
           </div>
 
-          <div 
+          <div
             className={`buymodal-card ${selectedProduct === "200g" ? "active" : ""}`}
             onClick={() => setSelectedProduct("200g")}
           >
             <div className="buymodal-img-wrapper">
-              <img src={choco2} alt="Chocolate" className="buymodal-card-image" />
+              <img
+                src={choco2}
+                alt="Chocolate"
+                className="buymodal-card-image"
+              />
             </div>
             <span className="buymodal-card-weight">200 g</span>
           </div>
 
-          <div 
+          <div
             className={`buymodal-card ${selectedProduct === "300g" ? "active" : ""}`}
             onClick={() => setSelectedProduct("300g")}
           >
             <div className="buymodal-img-wrapper">
-              <img src={choco3} alt="Chocolate" className="buymodal-card-image" />
+              <img
+                src={choco3}
+                alt="Chocolate"
+                className="buymodal-card-image"
+              />
             </div>
             <span className="buymodal-card-weight">300 g</span>
           </div>
@@ -83,12 +92,20 @@ const BuyModal = ({ isOpen, onClose }) => {
 
           <div className="buymodal-row">
             <input type="text" placeholder="Name" className="buymodal-input" />
-            <input type="text" placeholder="Surname" className="buymodal-input" />
+            <input
+              type="text"
+              placeholder="Surname"
+              className="buymodal-input"
+            />
           </div>
 
           <div className="buymodal-field">
             <label className="buymodal-label">Email</label>
-            <input type="email" placeholder="Enter your email" className="buymodal-input" />
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="buymodal-input"
+            />
           </div>
 
           <div className="buymodal-field">
@@ -99,16 +116,20 @@ const BuyModal = ({ isOpen, onClose }) => {
                 <span className="buymodal-code">+380</span>
               </div>
               <div className="buymodal-divider"></div>
-              <input type="tel" placeholder="Phone number" className="buymodal-phone-input" />
+              <input
+                type="tel"
+                placeholder="Phone number"
+                className="buymodal-phone-input"
+              />
             </div>
           </div>
 
           <div className="buymodal-field">
             <label className="buymodal-label">Card number</label>
             <div className="buymodal-card-wrapper">
-              <input 
-                type="text" 
-                placeholder="Enter card" 
+              <input
+                type="text"
+                placeholder="Enter card"
                 className="buymodal-card-input"
                 value={cardNumber}
                 onChange={handleCardChange}
@@ -123,7 +144,11 @@ const BuyModal = ({ isOpen, onClose }) => {
 
           <div className="buymodal-field">
             <label className="buymodal-label">Comment</label>
-            <textarea rows="4" placeholder="Enter text" className="buymodal-textarea" />
+            <textarea
+              rows="4"
+              placeholder="Enter text"
+              className="buymodal-textarea"
+            />
           </div>
 
           <button type="submit" className="buymodal-submit">
