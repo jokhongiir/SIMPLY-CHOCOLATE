@@ -16,7 +16,7 @@ const Home = () => {
 
             <div className="hero-buttons">
               <button className="buy-btn">Buy now</button>
-              <button className="made-btn">How it's made</button>
+              <a href="#made"><button className="made-btn">How it's made</button></a>
             </div>
           </div>
 
