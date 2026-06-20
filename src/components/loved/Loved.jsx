@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react"; // useState qo'shildi
 import "./Loved.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,6 +6,9 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+
+// ReviewModal komponentini import qiling (yo'lini to'g'ri ko'rsatganingizga ishonch hosil qiling)
+import ReviewModal from "../reviewmodal/ReviewModal";
 
 const customerReviews = [
   {
@@ -53,6 +56,9 @@ const customerReviews = [
 ];
 
 const Loved = () => {
+  // Modalning ochiq yoki yopiqligini boshqaruvchi state
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
+
   return (
     <section className="choco-love-area" id="reviews">
       <div className="choco-love-container">
@@ -106,9 +112,15 @@ const Loved = () => {
         </Swiper>
 
         <div className="choco-review-action">
-          <button className="choco-review-btn">Leave a review</button>
+          {/* Tugma bosilganda modalni ochish (state-ni true qilish) */}
+          <button className="choco-review-btn" onClick={() => setIsReviewOpen(true)}>
+            Leave a review
+          </button>
         </div>
       </div>
+
+      {/* Review Modal-ni chaqirish va unga propslarni uzatish */}
+      <ReviewModal isOpen={isReviewOpen} onClose={() => setIsReviewOpen(false)} />
     </section>
   );
 };
