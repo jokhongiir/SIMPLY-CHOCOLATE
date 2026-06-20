@@ -1,14 +1,420 @@
-.buy-modal {
-  width: 90%;
-  max-width: 780px;
-  max-height: 88vh;
-  overflow-y: auto;
+/* ==========================================================================
+   1. OVERLAY & SCROLLBAR STILLARI
+   ========================================================================== */
+.buymodal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: rgba(17, 17, 17, 0.4);
+  backdrop-filter: blur(4px);
+  animation: fadeOverlay 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
 
-  background: #fafafa;
-  border-radius: 32px;
+/* Modal ichidagi chiroyli va ingichka skrollbar */
+.buymodal-container::-webkit-scrollbar {
+  width: 6px;
+}
 
-  padding: 35px 45px;
+.buymodal-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.buymodal-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.buymodal-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   2. MODAL ASOSIY KONTEYNERI
+   ========================================================================== */
+.buymodal-container {
   position: relative;
+  width: 100%;
+  max-width: 610px; /* Rasmdagi ixcham va mukammal o'lcham */
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #FAFAFA;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.06);
+  animation: modalShow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 
-  animation: modalShow .35s ease;
+/* ==========================================================================
+   3. YOPISH TUGMASI (CLOSE)
+   ========================================================================== */
+.buymodal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: none;
+  background: transparent;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.8;
+}
+
+.buymodal-close:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   4. SARLAVHA (TITLE)
+   ========================================================================== */
+.buymodal-title {
+  text-align: center;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.buymodal-title span {
+  color: #FD9222;
+}
+
+/* ==========================================================================
+   5. SHOKOLAD KARTALARI (PRODUCTS)
+   ========================================================================== */
+.buymodal-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.buymodal-card {
+  background-color: #FFFFFF;
+  border: 1.5px solid rgba(17, 17, 17, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 195px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.buymodal-img-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.buymodal-card-image {
+  max-width: 100%;
+  max-height: 95px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.buymodal-card-weight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAFAFA;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  border-radius: 20px;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* Kartalar HOVER va ACTIVE (Tanlangan) holatlari */
+.buymodal-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(253, 146, 34, 0.4);
+}
+
+.buymodal-card.active {
+  border-color: #FD9222;
+  box-shadow: 0px 8px 24px rgba(253, 146, 34, 0.08);
+}
+
+.buymodal-card.active .buymodal-card-weight {
+  background-color: #FD9222;
+  border-color: #FD9222;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   6. FORMA ELEMENTLARI & LABELS
+   ========================================================================== */
+.buymodal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.buymodal-form-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
+}
+
+.buymodal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.buymodal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buymodal-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+}
+
+/* ==========================================================================
+   7. INPUTLAR STILIZATSIYASI
+   ========================================================================== */
+.buymodal-input,
+.buymodal-phone-wrapper,
+.buymodal-card-wrapper,
+.buymodal-textarea {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #111111;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buymodal-input {
+  height: 52px;
+  padding: 0 18px;
+  outline: none;
+}
+
+.buymodal-input::placeholder,
+.buymodal-phone-input::placeholder,
+.buymodal-card-input::placeholder,
+.buymodal-textarea::placeholder {
+  color: rgba(17, 17, 17, 0.25); /* Rasmdagi kabi nozik kulrang placeholder */
+}
+
+/* FOCUS holatlari */
+.buymodal-input:focus,
+.buymodal-phone-wrapper:focus-within,
+.buymodal-card-wrapper:focus-within,
+.buymodal-textarea:focus {
+  outline: none;
+  border-color: #FD9222;
+  box-shadow: 0 0 0 3px rgba(253, 146, 34, 0.05);
+}
+
+/* ==========================================================================
+   8. TELEFON & KARTA INPUTLARI (SPECIAL WRAPPERS)
+   ========================================================================== */
+.buymodal-phone-wrapper,
+.buymodal-card-wrapper {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 18px;
+}
+
+.buymodal-phone-country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111111;
+  user-select: none;
+}
+
+.buymodal-flag {
+  font-size: 18px;
+  display: inline-flex;
+}
+
+.buymodal-code {
+  font-variant-numeric: tabular-nums;
+}
+
+.buymodal-divider {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(17, 17, 17, 0.1);
+  margin: 0 14px;
+}
+
+.buymodal-phone-input,
+.buymodal-card-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: #111111;
+  width: 100%;
+}
+
+/* MasterCard Logotipi (CSSda yaratilgan) */
+.buymodal-mastercard-logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 30px;
+  height: 18px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.circle-red, 
+.circle-orange {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle-red {
+  background-color: #EB001B;
+  left: 0;
+}
+
+.circle-orange {
+  background-color: #F79E1B;
+  right: 0;
+  mix-blend-mode: multiply; /* Ikkala doira kesishgan joy professional chiqishi uchun */
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   9. TEXTAREA (COMMENT)
+   ========================================================================== */
+.buymodal-textarea {
+  padding: 16px 18px;
+  resize: none;
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   10. SUBMIT TUGMASI (BUTTON)
+   ========================================================================== */
+.buymodal-submit {
+  width: fit-content;
+  min-width: 135px;
+  height: 48px;
+  background-color: #FD9222;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px; /* Rasmdagi yumaloq tugma */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 8px;
+  padding: 0 32px;
+}
+
+.buymodal-submit:hover {
+  background-color: #E07F1B;
+}
+
+.buymodal-submit:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   11. ANIMATSIYALAR (ANIMATIONS)
+   ========================================================================== */
+@keyframes fadeOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalShow {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ==========================================================================
+   12. RESPONSIVE (MOBIL QURILMALAR UCHUN)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .buymodal-container {
+    padding: 24px;
+    max-height: 94vh;
+    border-radius: 20px;
+  }
+
+  .buymodal-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .buymodal-products {
+    grid-template-columns: 1fr; /* Mobil telefonda kartalar ketma-ket tushadi */
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .buymodal-card {
+    height: 120px;
+    flex-direction: row; /* Yonma-yon ko'rinish */
+    padding: 16px;
+  }
+  
+  .buymodal-img-wrapper {
+    justify-content: flex-start;
+  }
+
+  .buymodal-card-image {
+    max-height: 80px;
+  }
+
+  .buymodal-card-weight {
+    width: auto;
+    padding: 6px 24px;
+  }
+
+  .buymodal-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .buymodal-submit {
+    width: 100%; /* Mobilda tugma to'liq kenglikni egallaydi */
+  }
 }
