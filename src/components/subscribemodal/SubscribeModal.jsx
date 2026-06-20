@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SubscribeModal.css';
+import choco from '../../assets/choco.png'; // O'zingiz import qilgan rasm
 
 const SubscribeModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
@@ -17,12 +18,17 @@ const SubscribeModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      {/* Modal o'zi */}
-      <div className="modal-container">
+    // Modal orqasidagi qorong'u fon bosilganda modal yopiladi
+    <div className="modal-overlay" onClick={onClose}>
+      
+      {/* stopPropagation modal ichki qismi bosilganda yopilib ketmasligini ta'minlaydi */}
+      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         
         {/* Yuqori qism: Shokoladli rasm va yopish tugmasi */}
-        <div className="modal-banner">
+        <div 
+          className="modal-banner"
+          style={{ backgroundImage: `url(${choco})` }} // choco rasmi shu yerga o'rnatildi
+        >
           <button className="modal-close-btn" onClick={onClose} aria-label="Yopish">
             <svg 
               width="14" 
