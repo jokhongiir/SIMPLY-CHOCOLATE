@@ -1,4 +1,3 @@
-/* Shriftlarni chiroyli ko'rsatish va box-sizing sozlamasi */
 .modal-overlay *,
 .modal-overlay *::before,
 .modal-overlay *::after {
@@ -8,7 +7,6 @@
   padding: 0;
 }
 
-/* Modal orqa foni (Xiralashgan va qorong'u) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -16,7 +14,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px); /* Orqa fonni xiralashtirish */
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,20 +22,16 @@
   padding: 20px;
 }
 
-/* Modal Kard (Oq oyna) */
 .modal-container {
   background-color: #ffffff;
   width: 100%;
   max-width: 540px;
-  border-radius: 28px; /* Rasmda judayam yumshoq burchaklar */
+  border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-
-  /* Modal ochilgandagi animatsiya */
   animation: modalAppear 0.3s ease-out forwards;
 }
 
-/* Shokolad rasmi joylashgan joy */
 .modal-banner {
   height: 240px;
   width: 100%;
@@ -46,7 +40,6 @@
   position: relative;
 }
 
-/* Yopish (X) tugmasi */
 .modal-close-btn {
   position: absolute;
   top: 20px;
@@ -70,12 +63,10 @@
   transform: scale(1.05);
 }
 
-/* Matn va forma qismi */
 .modal-content {
   padding: 35px 40px 45px 40px;
 }
 
-/* Sarlavha stili */
 .modal-title {
   margin: 0 0 28px 0;
   font-size: 30px;
@@ -85,24 +76,21 @@
   letter-spacing: -0.5px;
 }
 
-/* To'q sariq rangdagi matn */
 .highlight-text {
   color: #ff9529;
 }
 
-/* Form elementlari joylashuvi */
 .modal-form {
   display: flex;
   gap: 15px;
   width: 100%;
 }
 
-/* Email kiritish maydoni (Input) */
 .modal-input {
   flex: 1;
   height: 54px;
   border-radius: 50px;
-  border: 1.5px solid #bc6a62; /* Rasm dagi o'sha maxsus qizg'ish border */
+  border: 1.5px solid #bc6a62;
   padding: 0 24px;
   font-size: 15px;
   font-weight: 500;
@@ -119,7 +107,6 @@
   color: #b0b0b0;
 }
 
-/* Submit tugmasi */
 .modal-submit-btn {
   background-color: #ff9529;
   color: #ffffff;
@@ -143,10 +130,6 @@
   transform: scale(0.98);
 }
 
-/* ==========================================================================
-   MUKAMMAL RESPONSIVE OPTIMIZATSIYA (INPUT INGINCHKA BO'LISHI TUZATILDI)
-   ========================================================================== */
-
 @media (max-width: 550px) {
   .modal-container {
     max-width: 100%;
@@ -163,7 +146,6 @@
     text-align: center;
   }
 
-  /* Form yo'nalishi ustma-ust bo'ladi */
   .modal-form {
     flex-direction: column;
     gap: 14px;
@@ -171,18 +153,16 @@
     display: flex;
   }
 
-  /* INPUTNING INGICHKA BO'LIB QOLISHINI OLDINI OLUVCHI ASOSIY QISM: */
   .modal-input {
-    flex: none; /* Flex siqishini butunlay o'chiramiz */
-    width: 100% !important; /* Kenglik to'liq 100% */
-    min-height: 54px !important; /* Balandlik kamayib ketmasligi uchun qat'iy chegara */
+    flex: none;
+    width: 100% !important;
+    min-height: 54px !important;
     height: 54px !important;
     padding: 0 24px;
-    font-size: 16px; /* Telefonda yaqinlashib ketmasligi uchun qulay font o'lchami */
+    font-size: 16px;
     border-radius: 50px;
   }
 
-  /* TUGMANING HAM BALANDLIGI INPUT BILAN BIR XIL CHIQADI */
   .modal-submit-btn {
     flex: none;
     width: 100% !important;
