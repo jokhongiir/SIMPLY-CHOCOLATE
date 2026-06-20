@@ -1,9 +1,8 @@
 import React, { useState } from "react"; 
 import "./Home.css";
-import BuyModal from "../buymodal/BuyModal"; // BuyModal komponentini to'g'ri yo'l bilan import qiling
+import BuyModal from "../buymodal/BuyModal";
 
 const Home = () => {
-  // Modalning ochiq yoki yopiqligini tekshiruvchi state
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -19,7 +18,6 @@ const Home = () => {
             </h1>
 
             <div className="hero-buttons">
-              {/* Tugma bosilganda modalni ochish (true qilish) */}
               <button className="buy-btn" onClick={() => setIsModalOpen(true)}>
                 Buy now
               </button>
@@ -76,7 +74,6 @@ const Home = () => {
         </div>
       </article>
 
-      {/* Modal komponentini chaqiramiz va unga kerakli props-larni beramiz */}
       <BuyModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
